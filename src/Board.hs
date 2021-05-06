@@ -22,7 +22,7 @@ tileAtPos (T (_, f)) = f
 instance Eq Board
   where b1 == b2 = all (\pos -> tileAtPos b1 pos == tileAtPos b2 pos) positions
 
--- Pretty print a board
+-- Pretty-print a board
 instance Show Board
   where show board = "\n" ++ unlines (map (intercalate " | ") tilesByRow)
           where positionsByRow = groupBy (\p1 p2 -> fst p1 == fst p2) positions
